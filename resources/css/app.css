@@ -1,0 +1,138 @@
+
+ @import "tailwindcss";
+
+ @theme {
+     --font-body: "Poppins", sans-serif;
+     --font-pop: "Poppins", sans-serif;
+     --color-red: #A60A07;
+     --color-gray: #DADADA;
+ }
+
+
+
+ body {
+     margin: 0;
+     padding: 0;
+     -webkit-box-sizing: border-box;
+     box-sizing: border-box;
+     background-color: #DADADA;
+     font-family: "Poppins", sans-serif;
+ }
+
+ ::-webkit-scrollbar {
+     width: 7px;
+ }
+
+ ::-webkit-scrollbar-track {
+     background: #f1f1f1;
+ }
+
+ ::-webkit-scrollbar-thumb {
+     background-image: -webkit-gradient(linear,
+             left top,
+             left bottom,
+             from(#c04b62),
+             to(#472d30));
+     background-image: linear-gradient(#c04b62, #472d30);
+     border-radius: 50px;
+ }
+
+ iframe {
+     width: 100%;
+     height: 100%;
+ }
+
+ .container {
+     width: 100%;
+     margin-right: auto;
+     margin-left: auto;
+     padding-right: 1rem;
+     padding-left: 1rem;
+ }
+
+ @media (min-width: 640px) {
+     .container {
+         max-width: 640px;
+         padding-right: 2rem;
+         padding-left: 2rem;
+     }
+ }
+
+ @media (min-width: 768px) {
+     .container {
+         max-width: 768px;
+     }
+ }
+
+ @media (min-width: 1024px) {
+     .container {
+         max-width: 1024px;
+         padding-right: 3rem;
+         padding-left: 3rem;
+     }
+ }
+
+ @media (min-width: 1280px) {
+     .container {
+         max-width: 1280px;
+         padding-right: 4rem;
+         padding-left: 4rem;
+     }
+ }
+
+ @media (min-width: 1536px) {
+     .container {
+         max-width: 1636px;
+         padding-right: 130px;
+         padding-left: 130px;
+     }
+ }
+
+ /* home slider  */
+ .homeSlider .swiper-pagination-bullet {
+     height: 30px !important;
+     width: 10px !important;
+     border-radius: 10px !important;
+     background: #ffebc2 !important;
+     opacity: 1 !important;
+     -webkit-transition: all 0.3s ease-in-out;
+     transition: all 0.3s ease-in-out;
+ }
+
+ .homeSlider .swiper-pagination-bullet-active {
+     height: 60px !important;
+     width: 10px !important;
+     background-color: #283e77 !important;
+ }
+
+ @media only screen and (max-width: 1023px) {
+     .homeSlider .swiper-pagination-bullet {
+         height: 10px !important;
+         width: 30px !important;
+     }
+
+     .homeSlider .swiper-pagination-bullet-active {
+         height: 10px !important;
+         width: 60px !important;
+         background-color: #283e77 !important;
+     }
+ }
+
+
+
+ /* styles.css or tailwind config */
+ .custom-dot {
+     width: 14px;
+     height: 14px;
+     background: rgba(255, 255, 255, 0.5);
+     border-radius: 50%;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     border: 2px solid white;
+ }
+
+ .custom-dot.swiper-pagination-bullet-active {
+     background: white;
+     width: 36px;
+     border-radius: 9999px;
+ }

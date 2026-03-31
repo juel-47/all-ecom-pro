@@ -1,0 +1,28 @@
+@extends('backend.layouts.master')
+@section('content')
+    <!-- Main Content -->
+
+    <section class="section">
+        <div class="section-header">
+            <h1>Transactions</h1>
+        </div>
+        <div class="section-body">
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>All Transactions</h4>
+                        </div>
+                        <div class="table-responsive card-body">
+                            {{ $dataTable->table(['class' => 'table table-striped table-bordered', 'id' => 'mobilepay-table']) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+@endsection
+@push('scripts')
+    {{ $dataTable->scripts(attributes: ['type' => 'module']) }}
+@endpush
