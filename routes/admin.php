@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminListController;
+use App\Http\Controllers\Backend\ApiIntegrationController;
 use App\Http\Controllers\Backend\AttendanceController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
@@ -33,6 +34,7 @@ use App\Http\Controllers\Backend\PaypalSettingController;
 use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\PickupShippingController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\SteadfastSettingController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductImageGalleryController;
@@ -190,6 +192,7 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
 
         /** payment routes */
         Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
+        Route::get('api-integration', [ApiIntegrationController::class, 'index'])->name('api-integration.index');
 
         /** paypal payment setting route */
         Route::put('paypal-setting/{id}', [PaypalSettingController::class, 'update'])->name('paypal-setting.update');
@@ -208,6 +211,9 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
         /** bKash payment setting route */
         Route::put('bkash-setting/{id}', [BkashSettingController::class, 'update'])->name('bkash-setting.update');
 
+        /** Steadfast courier setting route */
+        Route::put('steadfast-setting/{id}', [SteadfastSettingController::class, 'update'])->name('steadfast-setting.update');
+
         /** order status route */
         Route::put('order-status/change-status', [OrderStatusController::class, 'changeStatus'])->name('order-status.change-status');
         Route::resource('order-status', OrderStatusController::class);
@@ -221,6 +227,12 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
         // Route::get('/orders/data/{statusId?}', [OrderController::class, 'getData'])->name('order.data');
 
         Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.show');
+        Route::post('/orders/{id}/steadfast', [OrderController::class, 'sendToSteadfast'])
+            ->name('orders.steadfast')
+            ->middleware('steadfast.config');
+        Route::post('/orders/steadfast/bulk', [OrderController::class, 'bulkSendToSteadfast'])
+            ->name('orders.steadfast.bulk')
+            ->middleware('steadfast.config');
         Route::get('payment-status', [OrderController::class, 'changePaymentStatus'])->name('payment-status');
         Route::delete('/orders/{id}', [OrderController::class, 'destroy'])->name('order.destroy');
 

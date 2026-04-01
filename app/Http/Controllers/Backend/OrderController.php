@@ -7,6 +7,7 @@ use App\DataTables\statusOrdersDataTable;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\OrderStatus;
+use App\Models\SteadfastSetting;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
 
@@ -101,5 +102,123 @@ class OrderController extends Controller
         $order->order_status_id = $request->status;
         $order->save();
         return response(['status' => 'success', 'message' => 'Updated Order Status Successfully']);
+    }
+
+    public function sendToSteadfast(Request $request, string $id)
+    {
+        $setting = SteadfastSetting::first();
+        if (!$setting || (int) $setting->status !== 1) {
+            return redirect()->back()->withErrors(['steadfast' => 'Steadfast is disabled or not configured.']);
+        }
+
+        $order = Order::findOrFail($id);
+        [$ok, $message] = $this->sendOrderToSteadfast($order, $setting);
+        if ($ok) {
+            return redirect()->back()->with('success', $message);
+        }
+        return redirect()->back()->withErrors(['steadfast' => $message]);
+    }
+
+    public function bulkSendToSteadfast(Request $request)
+    {
+        $setting = SteadfastSetting::first();
+        if (!$setting || (int) $setting->status !== 1) {
+            return response()->json(['message' => 'Steadfast is disabled or not configured.'], 422);
+        }
+
+        $orderIds = $request->input('order_ids', []);
+        if (!is_array($orderIds) || empty($orderIds)) {
+            return response()->json(['message' => 'No orders selected.'], 422);
+        }
+
+        $orders = Order::whereIn('id', $orderIds)->get();
+        $successCount = 0;
+        $errors = [];
+
+        foreach ($orders as $order) {
+            [$ok, $message] = $this->sendOrderToSteadfast($order, $setting);
+            if ($ok) {
+                $successCount++;
+            } else {
+                $errors[] = "Order #{$order->id}: {$message}";
+            }
+        }
+
+        return response()->json([
+            'message' => "Sent {$successCount} order(s) to Steadfast.",
+            'errors' => $errors,
+        ]);
+    }
+
+    private function sendOrderToSteadfast(Order $order, SteadfastSetting $setting): array
+    {
+        if (!empty($order->courier_consignment_id)) {
+            return [false, 'This order is already sent to Steadfast.'];
+        }
+
+        $address = is_string($order->order_address) ? json_decode($order->order_address, true) : (array) $order->order_address;
+        $personal = is_string($order->personal_info) ? json_decode($order->personal_info, true) : (array) $order->personal_info;
+
+        $recipientName = trim(($personal['first_name'] ?? '') . ' ' . ($personal['last_name'] ?? ''));
+        if (!$recipientName) {
+            $recipientName = $personal['name'] ?? '';
+        }
+        $recipientPhone = $personal['phone'] ?? ($address['phone'] ?? null);
+
+        $addressParts = array_filter([
+            $address['address'] ?? null,
+            $address['city'] ?? null,
+            $address['zip_code'] ?? ($address['zip'] ?? null),
+            $address['state'] ?? null,
+            $address['country'] ?? null,
+        ]);
+        $recipientAddress = implode(', ', $addressParts);
+
+        if (!$recipientName || !$recipientPhone || !$recipientAddress) {
+            return [false, 'Recipient name, phone or address is missing.'];
+        }
+
+        $codAmount = $order->payment_status ? 0 : (float) $order->amount;
+
+        config([
+            'steadfast-courier.base_url' => $setting->base_url ?: config('steadfast-courier.base_url'),
+            'steadfast-courier.api_key' => $setting->api_key,
+            'steadfast-courier.secret_key' => $setting->secret_key,
+        ]);
+
+        try {
+            if (!class_exists(\SteadFast\SteadFastCourierLaravelPackage\SteadfastCourier::class)) {
+                require_once base_path('vendor/steadfast-courier/steadfast-courier-laravel-package/src/SteadfastCourier.php');
+            }
+            $steadfast = new \SteadFast\SteadFastCourierLaravelPackage\SteadfastCourier();
+            $response = $steadfast->placeOrder([
+                'invoice' => (string) ($order->invoice_id ?? ('INV-' . $order->id)),
+                'recipient_name' => $recipientName,
+                'recipient_phone' => $recipientPhone,
+                'recipient_address' => $recipientAddress,
+                'cod_amount' => $codAmount,
+                'note' => 'Order #' . $order->id,
+            ]);
+        } catch (\Throwable $e) {
+            return [false, 'Steadfast API error: ' . $e->getMessage()];
+        }
+
+        if (($response['status'] ?? null) === 200 && isset($response['consignment'])) {
+            $consignment = $response['consignment'];
+
+            $order->update([
+                'courier_provider' => 'steadfast',
+                'courier_consignment_id' => $consignment['consignment_id'] ?? null,
+                'courier_tracking_code' => $consignment['tracking_code'] ?? null,
+                'courier_status' => $consignment['status'] ?? null,
+                'courier_response' => $response,
+                'courier_sent_at' => now(),
+            ]);
+
+            return [true, 'Order sent to Steadfast successfully.'];
+        }
+
+        $message = $response['message'] ?? 'Failed to send order to Steadfast.';
+        return [false, $message];
     }
 }

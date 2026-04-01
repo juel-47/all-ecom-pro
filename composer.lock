@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "74cd42737a157476a3137a9ce689e71a",
+    "content-hash": "bc5323086fb16d4d7863181593fff550",
     "packages": [
         {
             "name": "brian2694/laravel-toastr",
@@ -5028,6 +5028,80 @@
                 "source": "https://github.com/srmklive/laravel-paypal/tree/3.0.40"
             },
             "time": "2025-02-25T21:38:18+00:00"
+        },
+        {
+            "name": "steadfast-courier/steadfast-courier-laravel-package",
+            "version": "1.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/steadfast-it/SteadFast-Courier-Laravel-Package.git",
+                "reference": "96fd4d4558c14e810704804a7ec58e9559a5b182"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/steadfast-it/SteadFast-Courier-Laravel-Package/zipball/96fd4d4558c14e810704804a7ec58e9559a5b182",
+                "reference": "96fd4d4558c14e810704804a7ec58e9559a5b182",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.2",
+                "illuminate/contracts": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0|^12.0",
+                "php": "^7.2|^8.0",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.1.1||^7.10.0",
+                "orchestra/testbench": "^9.0.0||^8.22.0",
+                "pestphp/pest": "^2.34",
+                "pestphp/pest-plugin-arch": "^2.7",
+                "pestphp/pest-plugin-laravel": "^2.3"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "SteadFastCourier": "SteadFast\\SteadFastCourierLaravelPackage\\Facades\\SteadFastCourierLaravelPackage"
+                    },
+                    "providers": [
+                        "SteadFast\\SteadFastCourierLaravelPackage\\LaravelSteadfastCourierServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SteadFast\\SteadFastCourierLaravelPackage\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "SteadFast",
+                    "email": "it@steadfast.com.bd",
+                    "role": "Owner"
+                }
+            ],
+            "description": "A complate Laravel package for SteadFast Courier Limited",
+            "homepage": "https://github.com/steadfast-it/steadfast-courier-laravel-package",
+            "keywords": [
+                "SteadFast",
+                "laravel",
+                "steadfast-courier-laravel-package"
+            ],
+            "support": {
+                "issues": "https://github.com/steadfast-it/SteadFast-Courier-Laravel-Package/issues",
+                "source": "https://github.com/steadfast-it/SteadFast-Courier-Laravel-Package/tree/1.1.4"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/AmadulHaque",
+                    "type": "github"
+                }
+            ],
+            "time": "2025-08-13T13:05:31+00:00"
         },
         {
             "name": "symfony/clock",

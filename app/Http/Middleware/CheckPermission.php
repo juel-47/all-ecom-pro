@@ -34,7 +34,7 @@ class CheckPermission
             'Manage Categories' => ['CategoryController', 'SubCategoryController', 'ChildCategoryController'],
             'Manage Products' => ['ProductController', 'BrandController', 'SizeController', 'ColorController', 'ReviewController'],
             'Manage Orders' => ['OrderController', 'OrderStatusController'],
-            'Manage Ecommerce' => ['CouponController', 'ShippingRuleController', 'FlashSaleController', 'PaymentSettingController', 'PromotionController'],
+            'Manage Ecommerce' => ['CouponController', 'ShippingRuleController', 'FlashSaleController', 'PaymentSettingController', 'PromotionController', 'ApiIntegrationController', 'SteadfastSettingController'],
             'Manage Transaction' => ['TransactionController', 'MobilePaySettingController'],
             'Manage Website' => ['SliderController', 'BranchController', 'CreatePageController', 'PageController', 'OrderStatusController'],
             'Manage Blog' => ['BlogController', 'BlogCategoryController'],

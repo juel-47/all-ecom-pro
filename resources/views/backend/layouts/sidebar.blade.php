@@ -131,6 +131,8 @@
                                     href="{{ route('admin.promotions.index') }}">Promotions</a></li>
                             <li class="{{ setActive(['admin.payment-settings.*']) }}"><a class="nav-link"
                                     href="{{ route('admin.payment-settings.index') }}">Payment Setting</a></li>
+                            <li class="{{ setActive(['admin.api-integration.*']) }}"><a class="nav-link"
+                                    href="{{ route('admin.api-integration.index') }}">API Integration</a></li>
                         </ul>
                     </li>
                 @endcan

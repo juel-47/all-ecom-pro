@@ -22,12 +22,20 @@ class Order extends Model
         // 'order_status',
         'order_status_id',
         'personal_info',
+        'courier_provider',
+        'courier_consignment_id',
+        'courier_tracking_code',
+        'courier_status',
+        'courier_response',
+        'courier_sent_at',
     ];
 
     protected $casts = [
         'order_address' => 'object',
         'shipping_method' => 'object',
         'coupon' => 'object',
+        'courier_response' => 'array',
+        'courier_sent_at' => 'datetime',
     ];
 
     public function orderStatus()

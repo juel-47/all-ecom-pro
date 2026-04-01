@@ -30,6 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'redirect.logged.in' => \App\Http\Middleware\RedirectIfAdminLoggedIn::class,
             'employee.access' => \App\Http\Middleware\EmployeeAccess::class,
             'bkash.config' => \App\Http\Middleware\LoadBkashConfig::class,
+            'steadfast.config' => \App\Http\Middleware\LoadSteadfastConfig::class,
         ]);
         $middleware->web(append: [
             HandleInertiaRequests::class,

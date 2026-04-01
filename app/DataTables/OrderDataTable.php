@@ -26,8 +26,10 @@ class OrderDataTable extends DataTable
                 $showBtn = "<a href='" . route('admin.order.show', $query->id) . "'class='btn btn-primary'><i class='far fa-eye'></i></a>";
                 $deleteBtn = "<a href='" . route('admin.order.destroy', $query->id) . "'class='btn btn-danger ml-2 delete-item'><i class='fas fa-trash'></i></a>";
 
-
                 return $showBtn . $deleteBtn;
+            })
+            ->addColumn('select', function ($query) {
+                return "<input type='checkbox' class='order-select' value='{$query->id}'>";
             })
             ->addColumn('customer', function ($query) {
                 return $query->customer->name ?? 'N/A';
@@ -81,7 +83,7 @@ class OrderDataTable extends DataTable
             ->addColumn('amount', function ($query) {
                 return $query->currency_icon . $query->amount;
             })
-            ->rawColumns(['action', 'order_status', 'payment_status', 'status_name'])
+            ->rawColumns(['action', 'order_status', 'payment_status', 'status_name', 'select'])
             ->setRowId('id');
     }
 
@@ -104,7 +106,7 @@ class OrderDataTable extends DataTable
             ->setTableId('order-table')
             ->columns($this->getColumns())
             ->minifiedAjax()
-            ->orderBy(0, 'desc')
+            ->orderBy(1, 'desc')
             ->selectStyleSingle()
             ->processing(true)
             ->dom('lBfrtip')
@@ -124,6 +126,12 @@ class OrderDataTable extends DataTable
     public function getColumns(): array
     {
         return [
+            Column::computed('select')
+                ->title('<input type="checkbox" id="select-all">')
+                ->exportable(false)
+                ->printable(false)
+                ->width(20)
+                ->addClass('text-center'),
             Column::make('id'),
             Column::make('invoice_id'),
             Column::make('customer'),

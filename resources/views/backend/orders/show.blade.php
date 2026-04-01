@@ -15,6 +15,16 @@
     <div class="section-header justify-content-between">
         <h1>Order Details</h1>
         <div class="section-header-action">
+            @if(empty($order->courier_consignment_id))
+                <form action="{{ route('admin.orders.steadfast', $order->id) }}" method="POST" class="d-inline">
+                    @csrf
+                    <button type="submit" class="btn btn-success" onclick="return confirm('Send this order to Steadfast?')">
+                        Send to Steadfast
+                    </button>
+                </form>
+            @else
+                <span class="badge badge-info">Sent to Steadfast</span>
+            @endif
             <a href="{{ route('admin.order.index') }}" class="btn btn-primary">Back</a>
         </div>
     </div>
@@ -87,6 +97,11 @@
                                     <span class="badge badge-{{ $order->payment_status ? 'success' : 'warning' }}">
                                         {{ $order->payment_status ? 'Complete' : 'Pending' }}
                                     </span>
+                                    <br>
+                                    <strong>Courier:</strong><br>
+                                    <b>Provider:</b> {{ $order->courier_provider ?? 'N/A' }}<br>
+                                    <b>Status:</b> {{ $order->courier_status ?? 'N/A' }}<br>
+                                    <b>Tracking:</b> {{ $order->courier_tracking_code ?? 'N/A' }}
                                 </address>
                             </div>
                         </div>
