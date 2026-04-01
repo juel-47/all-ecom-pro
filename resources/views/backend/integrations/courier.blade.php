@@ -1,9 +1,9 @@
 @extends('backend.layouts.master')
-@section('title', 'API Integration')
+@section('title', 'Courier API')
 @section('content')
     <section class="section">
         <div class="section-header">
-            <h1>API Integration</h1>
+            <h1>Courier API</h1>
         </div>
 
         <div class="section-body">

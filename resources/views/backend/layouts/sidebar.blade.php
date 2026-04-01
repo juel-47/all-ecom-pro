@@ -131,16 +131,14 @@
                                     href="{{ route('admin.promotions.index') }}">Promotions</a></li>
                             <li class="{{ setActive(['admin.payment-settings.*']) }}"><a class="nav-link"
                                     href="{{ route('admin.payment-settings.index') }}">Payment Setting</a></li>
-                            <li class="{{ setActive(['admin.api-integration.*']) }}"><a class="nav-link"
-                                    href="{{ route('admin.api-integration.index') }}">API Integration</a></li>
                         </ul>
                     </li>
                 @endcan
-                @can('Manage Transaction')
-                    <li class="dropdown {{ setActive(['admin.transaction', 'admin.mobilepay-transaction']) }} ">
-                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
-                                class="fas fa-money-bill-alt"></i>
-                            <span>Transaction</span></a>
+            @can('Manage Transaction')
+                <li class="dropdown {{ setActive(['admin.transaction', 'admin.mobilepay-transaction']) }} ">
+                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                            class="fas fa-money-bill-alt"></i>
+                        <span>Transaction</span></a>
                         <ul class="dropdown-menu">
                             <li class="{{ setActive(['admin.transaction']) }}"><a class="nav-link"
                                     href="{{ route('admin.transaction') }}"><i
@@ -208,6 +206,27 @@
                         href="{{ route('admin.users.index') }}"><i class="far fa-user"></i><span>Users</span></a>
                 </li>
             @endcan
+
+            @canany(['Manage Courier API', 'Manage SMS API'])
+                <li class="menu-header">Integrations</li>
+                <li class="dropdown {{ setActive(['admin.integrations.*']) }}">
+                    <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
+                        <i class="fas fa-plug"></i><span>API Integration</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        @can('Manage Courier API')
+                            <li class="{{ setActive(['admin.integrations.courier']) }}">
+                                <a class="nav-link" href="{{ route('admin.integrations.courier') }}"><i class="fas fa-truck"></i> Courier API</a>
+                            </li>
+                        @endcan
+                        @can('Manage SMS API')
+                            <li class="{{ setActive(['admin.integrations.sms']) }}">
+                                <a class="nav-link" href="{{ route('admin.integrations.sms') }}"><i class="fas fa-comment-dots"></i> SMS API</a>
+                            </li>
+                        @endcan
+                    </ul>
+                </li>
+            @endcanany
             @can('Manage Employee')
                 <li class="menu-header">Manage Employee</li>
                 <li class="{{ setActive(['admin.employees.*']) }}"><a class="nav-link"

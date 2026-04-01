@@ -3,8 +3,8 @@
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminListController;
-use App\Http\Controllers\Backend\ApiIntegrationController;
 use App\Http\Controllers\Backend\AttendanceController;
+use App\Http\Controllers\Backend\CourierIntegrationController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\BranchController;
@@ -34,6 +34,7 @@ use App\Http\Controllers\Backend\PaypalSettingController;
 use App\Http\Controllers\Backend\PermissionController;
 use App\Http\Controllers\Backend\PickupShippingController;
 use App\Http\Controllers\Backend\SliderController;
+use App\Http\Controllers\Backend\SmsIntegrationController;
 use App\Http\Controllers\Backend\SteadfastSettingController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
@@ -192,7 +193,8 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
 
         /** payment routes */
         Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
-        Route::get('api-integration', [ApiIntegrationController::class, 'index'])->name('api-integration.index');
+        Route::get('integrations/courier', [CourierIntegrationController::class, 'index'])->name('integrations.courier');
+        Route::get('integrations/sms', [SmsIntegrationController::class, 'index'])->name('integrations.sms');
 
         /** paypal payment setting route */
         Route::put('paypal-setting/{id}', [PaypalSettingController::class, 'update'])->name('paypal-setting.update');

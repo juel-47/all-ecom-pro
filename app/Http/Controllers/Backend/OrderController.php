@@ -213,6 +213,7 @@ class OrderController extends Controller
                 'courier_status' => $consignment['status'] ?? null,
                 'courier_response' => $response,
                 'courier_sent_at' => now(),
+                'order_status_id' => $this->getInCourierStatusId() ?? $order->order_status_id,
             ]);
 
             return [true, 'Order sent to Steadfast successfully.'];
@@ -220,5 +221,15 @@ class OrderController extends Controller
 
         $message = $response['message'] ?? 'Failed to send order to Steadfast.';
         return [false, $message];
+    }
+
+    private function getInCourierStatusId(): ?int
+    {
+        $status = OrderStatus::whereRaw('LOWER(slug) = ?', ['in-courier'])
+            ->orWhereRaw('LOWER(name) = ?', ['in courier'])
+            ->where('status', 1)
+            ->first();
+
+        return $status?->id;
     }
 }
