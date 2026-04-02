@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminListController;
 use App\Http\Controllers\Backend\AttendanceController;
+use App\Http\Controllers\Backend\AiChatController;
+use App\Http\Controllers\Backend\AiIntegrationController;
 use App\Http\Controllers\Backend\CourierIntegrationController;
 use App\Http\Controllers\Backend\BlogCategoryController;
 use App\Http\Controllers\Backend\BlogController;
@@ -196,6 +198,9 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
         Route::get('integrations/courier', [CourierIntegrationController::class, 'index'])->name('integrations.courier');
         Route::get('integrations/sms', [SmsIntegrationController::class, 'index'])->name('integrations.sms');
         Route::put('integrations/sms/{id}', [SmsIntegrationController::class, 'update'])->name('integrations.sms.update');
+        Route::get('integrations/ai', [AiIntegrationController::class, 'index'])->name('integrations.ai');
+        Route::put('integrations/ai/{id}', [AiIntegrationController::class, 'update'])->name('integrations.ai.update');
+        Route::post('ai/chat', [AiChatController::class, 'send'])->name('ai.chat');
 
         /** paypal payment setting route */
         Route::put('paypal-setting/{id}', [PaypalSettingController::class, 'update'])->name('paypal-setting.update');

@@ -122,6 +122,9 @@ class RolePermissionSeeder extends Seeder
             'edit roles',
             'delete roles',
             'view roles',
+
+            // Integrations
+            'Manage AI API',
         ];
 
         foreach ($permissions as $perm) {

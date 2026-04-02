@@ -37,6 +37,7 @@ class CheckPermission
             'Manage Ecommerce' => ['CouponController', 'ShippingRuleController', 'FlashSaleController', 'PaymentSettingController', 'PromotionController', 'SteadfastSettingController'],
             'Manage Courier API' => ['CourierIntegrationController'],
             'Manage SMS API' => ['SmsIntegrationController'],
+            'Manage AI API' => ['AiIntegrationController'],
             'Manage Transaction' => ['TransactionController', 'MobilePaySettingController'],
             'Manage Website' => ['SliderController', 'BranchController', 'CreatePageController', 'PageController', 'OrderStatusController'],
             'Manage Blog' => ['BlogController', 'BlogCategoryController'],

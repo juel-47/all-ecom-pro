@@ -207,7 +207,7 @@
                 </li>
             @endcan
 
-            @canany(['Manage Courier API', 'Manage SMS API'])
+            @canany(['Manage Courier API', 'Manage SMS API', 'Manage AI API'])
                 <li class="menu-header">Integrations</li>
                 <li class="dropdown {{ setActive(['admin.integrations.*']) }}">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
@@ -222,6 +222,11 @@
                         @can('Manage SMS API')
                             <li class="{{ setActive(['admin.integrations.sms']) }}">
                                 <a class="nav-link" href="{{ route('admin.integrations.sms') }}"><i class="fas fa-comment-dots"></i> SMS API</a>
+                            </li>
+                        @endcan
+                        @can('Manage AI API')
+                            <li class="{{ setActive(['admin.integrations.ai']) }}">
+                                <a class="nav-link" href="{{ route('admin.integrations.ai') }}"><i class="fas fa-robot"></i> AI API</a>
                             </li>
                         @endcan
                     </ul>
