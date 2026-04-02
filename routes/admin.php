@@ -195,6 +195,7 @@ Route::middleware(['web', 'auth', 'verified', 'check.permission'])->prefix('admi
         Route::get('payment-settings', [PaymentSettingController::class, 'index'])->name('payment-settings.index');
         Route::get('integrations/courier', [CourierIntegrationController::class, 'index'])->name('integrations.courier');
         Route::get('integrations/sms', [SmsIntegrationController::class, 'index'])->name('integrations.sms');
+        Route::put('integrations/sms/{id}', [SmsIntegrationController::class, 'update'])->name('integrations.sms.update');
 
         /** paypal payment setting route */
         Route::put('paypal-setting/{id}', [PaypalSettingController::class, 'update'])->name('paypal-setting.update');

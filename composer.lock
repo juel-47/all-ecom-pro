@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bc5323086fb16d4d7863181593fff550",
+    "content-hash": "ecfcb108e9c3fe22073c733cd53830cb",
     "packages": [
         {
             "name": "brian2694/laravel-toastr",
@@ -847,6 +847,84 @@
             "time": "2025-12-03T09:33:47+00:00"
         },
         {
+            "name": "gr8shivam/laravel-sms-api",
+            "version": "4.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gr8shivam/laravel-sms-api.git",
+                "reference": "889adbe56acd8c36235aea94af1fd9ba6ec1697c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gr8shivam/laravel-sms-api/zipball/889adbe56acd8c36235aea94af1fd9ba6ec1697c",
+                "reference": "889adbe56acd8c36235aea94af1fd9ba6ec1697c",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "guzzlehttp/guzzle": "^7.8",
+                "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+                "phpunit/phpunit": "^10.0|^11.0|^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "SmsApi": "Gr8Shivam\\SmsApi\\SmsApiFacade"
+                    },
+                    "providers": [
+                        "Gr8Shivam\\SmsApi\\SmsApiServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/functions.php"
+                ],
+                "psr-4": {
+                    "Gr8Shivam\\SmsApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Shivam Agarwal",
+                    "email": "gr8shivam25@gmail.com",
+                    "homepage": "https://github.com/gr8shivam",
+                    "role": "Developer"
+                }
+            ],
+            "description": "A modern, flexible Laravel package for integrating any SMS gateway with REST API support",
+            "homepage": "https://github.com/gr8shivam/laravel-sms-api",
+            "keywords": [
+                "api",
+                "gateway",
+                "laravel",
+                "msg91",
+                "nexmo",
+                "notification",
+                "plivo",
+                "sinch",
+                "sms",
+                "twilio",
+                "vonage"
+            ],
+            "support": {
+                "docs": "https://github.com/gr8shivam/laravel-sms-api#readme",
+                "issues": "https://github.com/gr8shivam/laravel-sms-api/issues",
+                "source": "https://github.com/gr8shivam/laravel-sms-api"
+            },
+            "time": "2026-03-26T16:59:48+00:00"
+        },
+        {
             "name": "graham-campbell/result-type",
             "version": "v1.1.3",
             "source": {
@@ -1532,6 +1610,95 @@
                 }
             ],
             "time": "2025-12-17T13:38:29+00:00"
+        },
+        {
+            "name": "larament/barta",
+            "version": "v1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/iRaziul/barta.git",
+                "reference": "21bbd448d7181042ed0838076477275242db5076"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/iRaziul/barta/zipball/21bbd448d7181042ed0838076477275242db5076",
+                "reference": "21bbd448d7181042ed0838076477275242db5076",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/contracts": "^11.0||^12.0||^13.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.14",
+                "nunomaduro/collision": "^8.8",
+                "orchestra/testbench": "^11.0||^10.0||^9.0.0",
+                "pestphp/pest": "^3.0||^4.0",
+                "pestphp/pest-plugin-arch": "^3.0||^4.0",
+                "pestphp/pest-plugin-laravel": "^3.0||^4.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Barta": "Larament\\Barta\\Facades\\Barta"
+                    },
+                    "providers": [
+                        "Larament\\Barta\\BartaServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Larament\\Barta\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raziul Islam",
+                    "email": "hello@raziul.dev",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Barta is a Laravel package designed to integrate popular Bangladeshi SMS gateways seamlessly.",
+            "homepage": "https://github.com/iRaziul/barta",
+            "keywords": [
+                "SMS Service",
+                "bangladesh",
+                "barta",
+                "sms",
+                "sms api",
+                "sms api bangladesh",
+                "sms gateway",
+                "sms gateway bangladesh",
+                "sms notification",
+                "sms notification bangladesh",
+                "sms provider",
+                "sms provider bangladesh",
+                "sms sender",
+                "sms sender bangladesh",
+                "sms service bangladesh"
+            ],
+            "support": {
+                "issues": "https://github.com/iRaziul/barta/issues",
+                "source": "https://github.com/iRaziul/barta/tree/v1.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/iRaziul",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-03-30T08:18:02+00:00"
         },
         {
             "name": "laravel/framework",

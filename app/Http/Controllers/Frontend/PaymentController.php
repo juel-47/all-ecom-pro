@@ -723,6 +723,13 @@ class PaymentController extends Controller
             Mail::to(Auth::user()->email)->send(new OrderConfirmedMail($order));
         }
 
+        // Send SMS (hybrid)
+        try {
+            app(\App\Services\Sms\SmsService::class)->sendOrderConfirmation($order);
+        } catch (\Throwable $e) {
+            Log::error('Order SMS failed', ['error' => $e->getMessage(), 'order_id' => $order->id]);
+        }
+
         return $order;
     }
 
