@@ -6,18 +6,18 @@
       "_vendor-react-CbqZeeub.js"
     ]
   },
-  "_ProductCard-DGNc5g26.js": {
-    "file": "assets/ProductCard-DGNc5g26.js",
+  "_ProductCard-PslpxRIm.js": {
+    "file": "assets/ProductCard-PslpxRIm.js",
     "name": "ProductCard",
     "imports": [
       "_vendor-react-CbqZeeub.js",
       "_vendor-pUXXxmew.js",
       "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ]
   },
-  "_Skeleton-DWxpNhIk.js": {
-    "file": "assets/Skeleton-DWxpNhIk.js",
+  "_Skeleton-BNEoR-ey.js": {
+    "file": "assets/Skeleton-BNEoR-ey.js",
     "name": "Skeleton",
     "imports": [
       "_vendor-react-CbqZeeub.js"
@@ -47,7 +47,7 @@
     "src": "_vendor-swiper-uGqyt-El.css"
   },
   "resources/css/app.css": {
-    "file": "assets/app-DMcS9OHB.css",
+    "file": "assets/app-DxKAn450.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "name": "app",
@@ -56,7 +56,7 @@
     ]
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-oNa4-Uj0.js",
+    "file": "assets/app-D95TlHju.js",
     "name": "app",
     "src": "resources/js/app.jsx",
     "isEntry": true,
@@ -98,7 +98,7 @@
       "resources/js/pages/UserProfile.jsx"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/About.jsx": {
@@ -113,82 +113,82 @@
     ]
   },
   "resources/js/pages/AllCampaignProductsPage.jsx": {
-    "file": "assets/AllCampaignProductsPage-g0xJecbv.js",
+    "file": "assets/AllCampaignProductsPage-E4EhkHia.js",
     "name": "AllCampaignProductsPage",
     "src": "resources/js/pages/AllCampaignProductsPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "resources/js/app.jsx",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/BlogDetailPage.jsx": {
-    "file": "assets/BlogDetailPage-C_CGlxUW.js",
+    "file": "assets/BlogDetailPage-C7VjK3Oa.js",
     "name": "BlogDetailPage",
     "src": "resources/js/pages/BlogDetailPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
-      "_Skeleton-DWxpNhIk.js",
+      "_Skeleton-BNEoR-ey.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js"
     ]
   },
   "resources/js/pages/BlogPage.jsx": {
-    "file": "assets/BlogPage-Dwj1a6sI.js",
+    "file": "assets/BlogPage-BrXytAvR.js",
     "name": "BlogPage",
     "src": "resources/js/pages/BlogPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
-      "_Skeleton-DWxpNhIk.js",
+      "_Skeleton-BNEoR-ey.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js"
     ]
   },
   "resources/js/pages/CampaignDetailPage.jsx": {
-    "file": "assets/CampaignDetailPage-D18NDybr.js",
+    "file": "assets/CampaignDetailPage-Be_nFmZ4.js",
     "name": "CampaignDetailPage",
     "src": "resources/js/pages/CampaignDetailPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
       "resources/js/app.jsx",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/CampaignPage.jsx": {
-    "file": "assets/CampaignPage-DYxkGdMZ.js",
+    "file": "assets/CampaignPage-CAjF1yZt.js",
     "name": "CampaignPage",
     "src": "resources/js/pages/CampaignPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
       "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/CartPage.jsx": {
-    "file": "assets/CartPage-rGKuEWId.js",
+    "file": "assets/CartPage-Eq0MpiT4.js",
     "name": "CartPage",
     "src": "resources/js/pages/CartPage.jsx",
     "isDynamicEntry": true,
@@ -199,28 +199,28 @@
       "_vendor-swiper-Ny51Tdo0.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/CategoryPage.jsx": {
-    "file": "assets/CategoryPage-CgItC5lA.js",
+    "file": "assets/CategoryPage-DA80whBY.js",
     "name": "CategoryPage",
     "src": "resources/js/pages/CategoryPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
       "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/CheckoutPage.jsx": {
-    "file": "assets/CheckoutPage-DQm4Mzk9.js",
+    "file": "assets/CheckoutPage-CbwQ2h2j.js",
     "name": "CheckoutPage",
     "src": "resources/js/pages/CheckoutPage.jsx",
     "isDynamicEntry": true,
@@ -231,7 +231,7 @@
       "_vendor-swiper-Ny51Tdo0.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/ContactPage.jsx": {
@@ -257,20 +257,20 @@
     ]
   },
   "resources/js/pages/Home.jsx": {
-    "file": "assets/Home-Dg5_TPzs.js",
+    "file": "assets/Home-CPW6Z0Xu.js",
     "name": "Home",
     "src": "resources/js/pages/Home.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
       "_vendor-swiper-Ny51Tdo0.js",
-      "_ProductCard-DGNc5g26.js",
+      "_Skeleton-BNEoR-ey.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
-      "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "resources/js/app.jsx"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/HowToOrder.jsx": {
@@ -340,7 +340,7 @@
     ]
   },
   "resources/js/pages/OrderSuccessPage.jsx": {
-    "file": "assets/OrderSuccessPage-2MqG-62w.js",
+    "file": "assets/OrderSuccessPage-BOK-ahbu.js",
     "name": "OrderSuccessPage",
     "src": "resources/js/pages/OrderSuccessPage.jsx",
     "isDynamicEntry": true,
@@ -351,7 +351,7 @@
       "_vendor-swiper-Ny51Tdo0.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/PrivacyPolicy.jsx": {
@@ -366,7 +366,7 @@
     ]
   },
   "resources/js/pages/ProductDetails.jsx": {
-    "file": "assets/ProductDetails-C2_jd0Ps.js",
+    "file": "assets/ProductDetails-CXHqFOtT.js",
     "name": "ProductDetails",
     "src": "resources/js/pages/ProductDetails.jsx",
     "isDynamicEntry": true,
@@ -375,30 +375,30 @@
       "_vendor-pUXXxmew.js",
       "resources/js/app.jsx",
       "_Breadcrumb-DtFmv9ws.js",
-      "_ProductCard-DGNc5g26.js",
-      "_Skeleton-DWxpNhIk.js",
+      "_ProductCard-PslpxRIm.js",
+      "_Skeleton-BNEoR-ey.js",
       "_vendor-swiper-Ny51Tdo0.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/ProductPage.jsx": {
-    "file": "assets/ProductPage-Dlpq09Ut.js",
+    "file": "assets/ProductPage-CuiynYbL.js",
     "name": "ProductPage",
     "src": "resources/js/pages/ProductPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
       "_Breadcrumb-DtFmv9ws.js",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
       "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/Register.jsx": {
@@ -446,21 +446,21 @@
     ]
   },
   "resources/js/pages/SearchPage.jsx": {
-    "file": "assets/SearchPage-gjKW_WhK.js",
+    "file": "assets/SearchPage-ClCICY-K.js",
     "name": "SearchPage",
     "src": "resources/js/pages/SearchPage.jsx",
     "isDynamicEntry": true,
     "imports": [
       "_vendor-react-CbqZeeub.js",
       "_Breadcrumb-DtFmv9ws.js",
-      "_ProductCard-DGNc5g26.js",
+      "_ProductCard-PslpxRIm.js",
       "_vendor-pUXXxmew.js",
       "_vendor-swiper-Ny51Tdo0.js",
       "resources/js/app.jsx",
-      "_Skeleton-DWxpNhIk.js"
+      "_Skeleton-BNEoR-ey.js"
     ],
     "css": [
-      "assets/app-DMcS9OHB.css"
+      "assets/app-DxKAn450.css"
     ]
   },
   "resources/js/pages/ShippingInfo.jsx": {
